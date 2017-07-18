@@ -1,5 +1,8 @@
 # Statistical project on soccer's corners.
 
+#### Media posts
+Reddit: https://www.reddit.com/r/soccer/comments/6nuk85/so_ive_scraped_statistics_for_about_11000_matches/  
+Sports.ru: https://www.sports.ru/tribuna/blogs/udarspyra/1335180.html (russian version of the text)
 
 Tech details
 ============
