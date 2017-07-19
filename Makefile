@@ -22,7 +22,7 @@ bash-build:
 
 
 start_scraping: bash-build test-psql-run
-	sleep 2
+	sleep 20
 	docker run --rm -i \
 		--link $(PG_CONTAINER_NAME) \
 		-e DEV_PSQL_URI=postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@$(PG_CONTAINER_NAME):5432/$(POSTGRES_DB) \
@@ -31,7 +31,7 @@ start_scraping: bash-build test-psql-run
 
 
 db_init: bash-build test-psql-run
-	sleep 2
+	sleep 20
 	docker run --rm -i \
 		--link $(PG_CONTAINER_NAME) \
 		-e DEV_PSQL_URI=postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@$(PG_CONTAINER_NAME):5432/$(POSTGRES_DB) \
@@ -39,7 +39,7 @@ db_init: bash-build test-psql-run
 		./db_init.sh
 
 analysis: bash-build test-psql-run
-	sleep 2
+	sleep 20
 	docker run --rm -i \
 		--link $(PG_CONTAINER_NAME) \
 		--volume $(CURDIR)/files/:/opt/corners/files/ \
