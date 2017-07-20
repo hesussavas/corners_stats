@@ -1,3 +1,5 @@
+from urllib.parse import urljoin
+
 from scrapy.http.request import Request
 from scrapy.spiders import Spider
 
@@ -15,7 +17,7 @@ class MySpider(Spider):
 
     def start_requests(self):
 
-        yield Request(BASE_URL, self.parse)
+        yield Request(urljoin(BASE_URL, 'statszone'), self.parse)
 
     def parse(self, response):
         # get competitions name and id:

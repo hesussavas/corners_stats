@@ -23,8 +23,8 @@ class MySpider(Spider):
 
         for league in leagues:
             for year in range(2010, 2015):
-                url = 'https://www.fourfourtwo.com/statszone/results/{}-{}'.format(
-                    league.league_id, year)
+                url = urljoin(BASE_URL, 'statszone/results/{}-{}'.format(
+                    league.league_id, year))
                 request = Request(url, self.parse)
                 request.meta['league_id'] = league.league_id
                 request.meta['year'] = year
